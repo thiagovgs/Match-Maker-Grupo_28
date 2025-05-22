@@ -4,4 +4,5 @@ numpy
 scikit-learn
 sentence-transformers
 deep-translator
-gdown==4.7.1
+os
+requests

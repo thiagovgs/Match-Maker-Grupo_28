@@ -42,6 +42,7 @@ def baixar_json_grande_hf(url, caminho_destino):
 
 @st.cache_data
 def carregar_dados():
+  try:
     df_embeddings = pd.read_parquet(LINKS["embeddings"])
 
     df_applicants = pd.read_json(LINKS["applicants"], orient='index')
@@ -92,6 +93,9 @@ def carregar_dados():
     # df_prospects = df_prospects.rename(columns={'codigo': 'codigo_candidato'})
 
     return df_applicants, df_vagas, df_prospects, df_embeddings
+  except Exception as e:
+    st.error(f"❌ Erro ao carregar dados: {e}")
+    st.stop()
 
 def traduzir_para_portugues(texto_original, id_vaga):
     if os.path.exists(TRADUCAO_CACHE):

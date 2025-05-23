@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+scikit-learn
+sentence-transformers
+deep-translator
+textwrap3
+tqdm
+pyarrow
+xlsxwriter

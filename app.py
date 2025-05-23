@@ -14,7 +14,7 @@ df_applicants = pd.concat(applicant_data, ignore_index=True)
 df_prospects = pd.read_parquet(f"{utils.PROCESSED_FILEPATH}/prospects.parquet")
 df_vagas = pd.read_parquet(f"{utils.PROCESSED_FILEPATH}/vagas.parquet")
 
-st.header("📋 Recomendador de Candidatos")
+st.header("📋 Match Maker")
 st.markdown("---")
 
 with st.form(key="form_busca"):
